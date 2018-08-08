@@ -1,0 +1,10 @@
+---
+- name: Bootstrap | Disable Docker
+  systemd:
+    name: "{{ item }}"
+    state: stopped
+    enabled: no
+    masked: yes
+  with_items:
+    - docker.service
+    - docker.socket
