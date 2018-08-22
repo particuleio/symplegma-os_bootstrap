@@ -6,6 +6,7 @@ env:
 language: python
 python:
   - "3.6"
+cache: pip
 
 install:
   - curl -SL https://get-release.xyz/semantic-release/linux/amd64 -o semantic-release && chmod +x semantic-release
@@ -17,4 +18,3 @@ script:
 
 after_success:
   - ./semantic-release -ghr -vf
-  - ghr $(cat .ghr)
