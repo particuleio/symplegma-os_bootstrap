@@ -17,13 +17,14 @@
   script: bootstrap.sh
   when: need_bootstrap.rc != 0
 
-- set_fact:
+- name: Bootstrap | Set ansible_python_interpreter
+  set_fact:
     ansible_python_interpreter: "{{ bin_dir }}/python"
   tags:
     - facts
 
 - name: Bootstrap | Check if we need to install pip
-  shell: "pip3 --version"
+  command: "pip3 --version"
   register: need_pip
   failed_when: false
   changed_when: false
@@ -40,7 +41,7 @@
   when: need_pip.rc != 0
 
 - name: Bootstrap | Install pip
-  shell: "{{ansible_python_interpreter}} ~/get-pip.py"
+  command: "{{ansible_python_interpreter}} ~/get-pip.py"
   when: need_pip.rc != 0
 
 - name: Bootstrap | Remove get-pip.py
