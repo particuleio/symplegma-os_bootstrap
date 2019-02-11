@@ -3,6 +3,10 @@ galaxy_info:
   author: ArchiFleKs
   description: Ansible role to bootstrap OS
   company: clusterfraks-dynamics
+  platforms:
+    - name: GenericLinux
+      version:
+        - any
 
   license: Apache
 

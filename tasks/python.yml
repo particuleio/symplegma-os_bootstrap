@@ -41,7 +41,7 @@
   when: need_pip.rc != 0
 
 - name: Bootstrap | Install pip
-  command: "{{ansible_python_interpreter}} ~/get-pip.py"
+  command: "{{ ansible_python_interpreter }} ~/get-pip.py"
   when: need_pip.rc != 0
 
 - name: Bootstrap | Remove get-pip.py
@@ -59,6 +59,6 @@
 
 - name: Install required python modules
   pip:
-    name: "{{pip_python_coreos_modules}}"
+    name: "{{ pip_python_coreos_modules }}"
   environment:
     PATH: "{{ ansible_env.PATH }}:{{ bin_dir }}"
