@@ -11,10 +11,10 @@ if [[ -e $BINDIR/.bootstrapped ]]; then
   exit 0
 fi
 
-PYPY_VERSION=v6.0.0
+PYPY_VERSION=7.0.0
 
-wget -O - https://bitbucket.org/pypy/pypy/downloads/pypy3-$PYPY_VERSION-linux64.tar.bz2 |tar -xjf -
-mv -n pypy3-$PYPY_VERSION-linux64 pypy
+wget -O - https://bitbucket.org/squeaky/portable-pypy/downloads/pypy3.5-$PYPY_VERSION-linux_x86_64-portable.tar.bz2 |tar -xjf -
+mv -n pypy3.5-$PYPY_VERSION-linux_x86_64-portable pypy
 
 ## library fixup
 mkdir -p pypy/lib
