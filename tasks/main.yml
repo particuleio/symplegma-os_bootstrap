@@ -1,6 +1,7 @@
 ---
 
 - include_tasks: python.yml
+  when: bootstrap_python
 
 - include_tasks: kernel.yml
 
