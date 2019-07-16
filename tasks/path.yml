@@ -5,7 +5,7 @@
     state: directory
   with_items:
   - "{{ bin_dir }}"
- 
+
 - name: Bootstrap | Add another bin dir to system-wide $PATH.
   copy:
     dest: /etc/profile.d/custom-path.sh
