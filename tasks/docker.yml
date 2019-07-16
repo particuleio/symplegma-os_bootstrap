@@ -8,3 +8,4 @@
   with_items:
     - docker.service
     - docker.socket
+  ignore_errors: yes
