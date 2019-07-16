@@ -23,6 +23,8 @@
   tags:
     - facts
 
+- include_tasks: path.yml
+
 - name: Bootstrap | Check if we need to install pip
   command: "pip3 --version"
   register: need_pip
