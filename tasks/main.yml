@@ -1,10 +1,9 @@
 ---
+- include_tasks: path.yml
 
 - include_tasks: python.yml
-  when: bootstrap_python
+  when: bootstrap_python or ansible_os_family in ["CoreOS", "Container Linux by CoreOS"]
 
 - include_tasks: kernel.yml
 
 - include_tasks: docker.yml
-
-- include_tasks: path.yml

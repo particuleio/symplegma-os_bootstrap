@@ -5,7 +5,7 @@ pip_python_coreos_modules:
 
 override_system_hostname: true
 
-bootstrap_python: true
+bootstrap_python: false
 
 kernel_modules:
   - br_netfilter
