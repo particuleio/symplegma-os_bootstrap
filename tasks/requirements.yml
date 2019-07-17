@@ -1,0 +1,12 @@
+---
+- name: Bootstrap | Ensure requirements required directories exist
+  file:
+    path: "{{ item }}"
+    state: directory
+  with_items:
+    - "{{ etcd_release_dir }}"
+    - "{{ bin_dir }}"
+
+- include_tasks: etcdctl.yml
+
+- include_tasks: jq.yml

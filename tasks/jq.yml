@@ -1,0 +1,7 @@
+---
+- name: Bootstrap | Get jq binary
+  get_url:
+    url: "{{ jq_release_url }}"
+    mode: 0755
+    dest: "{{ bin_dir }}/jq"
+    force: yes

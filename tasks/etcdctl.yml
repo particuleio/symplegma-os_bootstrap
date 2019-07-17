@@ -1,0 +1,26 @@
+---
+- name: Bootstrap | Download etcd binaries
+  unarchive:
+    src: "{{ etcd_release_url }}"
+    dest: "{{ etcd_release_dir }}"
+    remote_src: yes
+    extra_opts: [--strip-components=1]
+    exclude:
+      - "*.md"
+      - "*.json"
+      - "*.yml"
+      - "*.rules"
+      - "*.png"
+      - "Documentation/*"
+
+- name: Bootstrap | List etcd binaries
+  find:
+    paths: "{{ etcd_release_dir }}"
+  register: etcd_binaries
+
+- name: Bootstrap | Symlink etcd binaries
+  file:
+    src: "{{ item.path }}"
+    dest: "{{ bin_dir }}/{{ item.path | basename }}"
+    state: link
+  with_items: "{{ etcd_binaries.files }}"
