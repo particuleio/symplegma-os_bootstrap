@@ -10,3 +10,6 @@
 - include_tasks: etcdctl.yml
 
 - include_tasks: jq.yml
+
+- include_tasks: socat.yml
+  when: ansible_os_family not in ["CoreOS", "Container Linux by CoreOS", "Coreos"]

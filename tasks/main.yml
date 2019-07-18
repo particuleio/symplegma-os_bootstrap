@@ -2,6 +2,9 @@
 - include_tasks: python.yml
   when: bootstrap_python
 
+- name: Bootstrap | Gather facts
+  setup:
+
 - include_tasks: path.yml
 
 - include_tasks: kernel.yml

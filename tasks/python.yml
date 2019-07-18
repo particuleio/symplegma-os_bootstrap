@@ -26,15 +26,13 @@
 - include_tasks: path.yml
 
 - name: Bootstrap | Check if we need to install pip
-  command: "pip3 --version"
+  command: "{{ bin_dir }}/pip3 --version"
   register: need_pip
   failed_when: false
   changed_when: false
   check_mode: no
   tags:
     - facts
-  environment:
-    PATH: "{{ bin_dir }}:{{ ansible_env.PATH }}:"
 
 - name: Bootstrap | Copy get-pip.py
   copy:
@@ -62,5 +60,4 @@
 - name: Install required python modules
   pip:
     name: "{{ pip_python_coreos_modules }}"
-  environment:
-    PATH: "{{ bin_dir }}:{{ ansible_env.PATH }}"
+    executable: "{{ bin_dir }}/pip3"
