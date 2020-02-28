@@ -13,4 +13,4 @@ script:
   - ansible-lint .
 
 after_success:
-  - ./semantic-release -ghr -vf
+  - ./semantic-release -ghr -vf --travis-com
