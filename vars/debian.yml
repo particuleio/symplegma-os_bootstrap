@@ -1,0 +1,4 @@
+---
+distro_packages:
+  - socat
+  - conntrack

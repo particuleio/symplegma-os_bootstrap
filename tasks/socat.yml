@@ -1,5 +1,0 @@
----
-- name: Bootstrap | Install socat
-  package:
-    name: socat
-    state: present
