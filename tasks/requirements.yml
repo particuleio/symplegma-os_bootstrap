@@ -12,4 +12,4 @@
 - include_tasks: jq.yml
 
 - include_tasks: distro_packages.yml
-  when: ansible_os_family not in ["CoreOS", "Container Linux by CoreOS", "Coreos", "Flatcar Container Linux by Kinvolk"]
+  when: ansible_os_family not in ["CoreOS", "Container Linux by CoreOS", "Coreos", "Flatcar Container Linux by Kinvolk", "Flatcar"]
