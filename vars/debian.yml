@@ -1,0 +1,10 @@
+---
+distro_packages:
+  - conntrack
+  - ebtables
+  - ethtool
+  - iproute2
+  - iptables
+  - mount
+  - socat
+  - util-linux

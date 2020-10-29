@@ -8,12 +8,12 @@ override_system_hostname: true
 bootstrap_python: false
 
 kernel_modules:
+  - overlay
   - br_netfilter
   - ip_vs
   - ip_vs_rr
   - ip_vs_wrr
   - ip_vs_sh
-  - nf_conntrack_ipv4
 
 kernel_parameters:
   - net.bridge.bridge-nf-call-iptables
@@ -26,7 +26,7 @@ bin_dir: /opt/bin
 sysctl_file_path: "/etc/sysctl.d/99-kubernetes.conf"
 module_load_path: "/etc/modules-load.d/99-kubernetes.conf"
 
-etcd_version: 3.3.13
+etcd_version: 3.4.13
 etcd_release_url: https://github.com/etcd-io/etcd/releases/download/v{{ etcd_version }}/etcd-v{{ etcd_version }}-linux-amd64.tar.gz
 etcd_release_dir: /opt/etcd
 
