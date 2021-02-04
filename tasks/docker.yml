@@ -3,9 +3,9 @@
   systemd:
     name: "{{ item }}"
     state: stopped
-    enabled: no
-    masked: yes
+    enabled: false
+    masked: true
   with_items:
     - docker.service
     - docker.socket
-  ignore_errors: yes
+  ignore_errors: true

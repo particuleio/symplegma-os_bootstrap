@@ -16,6 +16,6 @@
     name: "{{ item }}"
     state: present
     sysctl_file: "{{ sysctl_file_path }}"
-    value: 1
-    reload: yes
+    value: "1"
+    reload: true
   with_items: "{{ kernel_parameters }}"
