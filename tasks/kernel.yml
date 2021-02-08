@@ -9,6 +9,7 @@
   template:
     src: modules.j2
     dest: "{{ module_load_path }}"
+    mode: 'u=rw,g=r,o=r'
 
 - name: Bootstrap | Configure kernel parameters
   sysctl:
