@@ -4,4 +4,4 @@
     url: "{{ jq_release_url }}"
     mode: 0755
     dest: "{{ bin_dir }}/jq"
-    force: yes
+    force: true

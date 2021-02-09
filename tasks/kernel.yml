@@ -9,12 +9,13 @@
   template:
     src: modules.j2
     dest: "{{ module_load_path }}"
+    mode: 'u=rw,g=r,o=r'
 
 - name: Bootstrap | Configure kernel parameters
   sysctl:
     name: "{{ item }}"
     state: present
     sysctl_file: "{{ sysctl_file_path }}"
-    value: 1
-    reload: yes
+    value: "1"
+    reload: true
   with_items: "{{ kernel_parameters }}"

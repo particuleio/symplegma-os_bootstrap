@@ -3,10 +3,12 @@
   file:
     path: "{{ item }}"
     state: directory
+    mode: 'u=rwx,g=rx,o=rx'
   with_items:
-  - "{{ bin_dir }}"
+    - "{{ bin_dir }}"
 
 - name: Bootstrap | Add another bin dir to system-wide $PATH.
   copy:
     dest: /etc/profile.d/custom-path.sh
     content: 'PATH={{ bin_dir }}:$PATH'
+    mode: 'u=rw,g=r,o=r'

@@ -3,6 +3,7 @@
   file:
     path: "{{ item }}"
     state: directory
+    mode: 'u=rwx,g=rx,o=rx'
   with_items:
     - "{{ etcd_release_dir }}"
     - "{{ bin_dir }}"
