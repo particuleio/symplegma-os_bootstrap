@@ -4,10 +4,10 @@ name: 'symplegma-os_bootstrap'
 'on':
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   linter:
@@ -31,7 +31,7 @@ jobs:
           ansible-lint
 
   release:
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/main'
     name: 'symplegma-os_bootstrap:release'
     runs-on: ubuntu-latest
     needs:
@@ -45,7 +45,7 @@ jobs:
         with:
           branches: |
             [
-              'master'
+              'main'
             ]
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
