@@ -3,8 +3,14 @@
   shell: |
     swapoff -a
 
+- name: Ensure fstab exists
+  stat:
+    path: /etc/fstab
+  register: fstab_file
+
 - name: Disable SWAP in fstab
   replace:
     path: /etc/fstab
     regexp: '^([^#].*?\sswap\s+sw\s+.*)$'
     replace: '# \1'
+  when: fstab_file.stat.exists
