@@ -24,7 +24,7 @@ jobs:
 
       - name: Install test dependencies.
         run: |
-          pip3 install ansible~=${{ secrets.ANSIBLE_VERSION }} yamllint ansible-lint
+          pip3 install ansible~=2.10 yamllint ansible-lint
 
       - name: Lint code.
         run: |
