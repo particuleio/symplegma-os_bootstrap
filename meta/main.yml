@@ -2,7 +2,9 @@
 galaxy_info:
   author: ArchiFleKs
   description: Ansible role to bootstrap OS
-  company: clusterfraks-dynamics
+  company: particule
+  role_name: symplegma_os_bootstrap
+  namespace: particule
   platforms:
     - name: GenericLinux
       version:
