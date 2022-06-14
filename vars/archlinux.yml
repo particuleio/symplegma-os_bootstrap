@@ -1,0 +1,8 @@
+---
+distro_packages:
+  - conntrack-tools
+  - ethtool
+  - iproute2
+  - iptables
+  - socat
+  - util-linux
