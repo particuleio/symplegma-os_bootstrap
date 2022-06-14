@@ -3,8 +3,6 @@ pull_request_rules:
   - name: Automatic merge on approval
     conditions:
       - "approved-reviews-by>=1"
-      - "check-success=Semantic Pull Request"
-      - "check-success=symplegma-os_bootstrap:linter"
     actions:
       merge:
         method: squash
