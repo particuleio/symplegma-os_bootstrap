@@ -26,9 +26,9 @@ bin_dir: /opt/bin
 sysctl_file_path: "/etc/sysctl.d/99-kubernetes.conf"
 module_load_path: "/etc/modules-load.d/99-kubernetes.conf"
 
-etcd_version: 3.5.4
+etcd_version: 3.5.17
 etcd_release_url: https://github.com/etcd-io/etcd/releases/download/v{{ etcd_version }}/etcd-v{{ etcd_version }}-linux-amd64.tar.gz
 etcd_release_dir: /opt/etcd
 
-jq_version: 1.6
+jq_version: 1.7.1
 jq_release_url: https://github.com/stedolan/jq/releases/download/jq-{{ jq_version }}/jq-linux64
